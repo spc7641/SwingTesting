@@ -26,4 +26,11 @@ Data Manager
 
 Appendix
 ========
+  In this section there will be an explanation for each of the packages in model view controller, and
+  the classes contained in those packages.
 
+Model
+-----
+
+View
+----
