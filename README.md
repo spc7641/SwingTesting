@@ -12,9 +12,11 @@ This system is the various work that I have done in order to learn the Swing lib
 
 Detailed Explanations
 =====================
+  In this section each of the major features of the system will be explained in detail.
 
 Self-Destruct
 -------------
+
 
 Resizing
 --------
@@ -22,4 +24,6 @@ Resizing
 Data Manager
 ------------
 
+Appendix
+========
 
