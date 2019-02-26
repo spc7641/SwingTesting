@@ -9,29 +9,29 @@ import javax.swing.JLabel;
 import javax.swing.WindowConstants;
 
 /**
- * Created by Shawn on 3/21/2018.
+ * Handler for the pop out resize windows submission.
  */
 public class SubmitEvent implements ActionListener {
 
 
   @Override
-  public void actionPerformed(ActionEvent e) {
+  public void actionPerformed( ActionEvent e ) {
     int width = Main.getWidth();
-    int height = Main.getHeight();
+    int height;
     try {
       width = ResizeEventHandler.getWidth();
     }
-    catch (NumberFormatException error){
-      openError("Enter Valid Width.");
+    catch ( NumberFormatException error ){
+      openError( "Enter Valid Width." );
     }
     try{
       height = ResizeEventHandler.getHeight();
-      Main.setFrameSize(width,height);
+      Main.setFrameSize( width, height );
       ResizeEventHandler.close();
       Main.setFocus();
     }
-    catch(NumberFormatException error){
-      openError("Enter Valid Height");
+    catch( NumberFormatException error ){
+      openError( "Enter Valid Height" );
     }
   }
 
@@ -39,18 +39,18 @@ public class SubmitEvent implements ActionListener {
    * Generic method for Displaying a window that shows that an error has occurred.
    * @param error The text that is input to be displayed as the error
    */
-  private static void openError(String error){
-    JFrame errorFrame = new JFrame("Error");
+  private static void openError( String error ){
+    JFrame errorFrame = new JFrame( "Error" );
 
-    JLabel label = new JLabel(error);
-    label.setFont(new Font(Font.SANS_SERIF, 1, 50));
+    JLabel label = new JLabel( error );
+    label.setFont( new Font( Font.SANS_SERIF, 1, 50 ) );
 
-    errorFrame.add(label);
+    errorFrame.add( label );
 
 
     errorFrame.pack();
-    errorFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-    errorFrame.setLocationRelativeTo(null);
-    errorFrame.setVisible(true);
+    errorFrame.setDefaultCloseOperation( WindowConstants.DISPOSE_ON_CLOSE );
+    errorFrame.setLocationRelativeTo( null );
+    errorFrame.setVisible( true );
   }
 }

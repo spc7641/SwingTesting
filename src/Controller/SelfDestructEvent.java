@@ -4,11 +4,15 @@ import View.Main;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.Timer;
 import javax.swing.WindowConstants;
 
+/**
+ * Event handler for the self destruct button.
+ */
 public class SelfDestructEvent implements ActionListener {
 
   private int count = 5;
@@ -19,7 +23,8 @@ public class SelfDestructEvent implements ActionListener {
    */
   @Override
   public void actionPerformed(ActionEvent e) {
-    JFrame destroy = new JFrame("AHHH!");
+    ((JButton)e.getSource()).removeActionListener(new SelfDestructEvent());
+    JFrame destroy = new JFrame();
     JLabel label = new JLabel(Integer.toString(count) + "!?!?!?!");
     label.setFont(new Font(Font.DIALOG,Font.BOLD,50));
 
